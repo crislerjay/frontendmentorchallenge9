@@ -1,38 +1,131 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+* {
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --primary01: #1e90ff;
+  --primary02: linear-gradient(to left, #57ddff, #00c9ff, #03afff, #7a8cff, #c058f3);
+  --light01: hsl(0, 0%, 98%);
+  --light02: hsl(236, 33%, 92%);
+  --light03: hsl(233, 11%, 84%);
+  --light04: hsl(236, 9%, 61%);
+  --light05: hsl(235, 19%, 35%);
+  --dark01: hsl(235, 21%, 11%);
+  --dark02: hsl(235, 24%, 19%);
+  --dark03: hsl(234, 39%, 85%);
+  --dark04: hsl(236, 33%, 92%);
+  --dark05: hsl(234, 11%, 52%);
+  --dark06: hsl(233, 14%, 35%);
+  --dark07: hsl(237, 14%, 26%);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 18px;
 }
-
-.App-header {
-  background-color: #282c34;
+a {
+  text-decoration: none;
+}
+.mainvisual {
+  position: relative;
   min-height: 100vh;
+  background: var(--light02);
+}
+.mainvisual.dark {
+  background: var(--dark01);
+}
+.mainvisual img {
+  width: 100%;
+}
+.content {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 540px;
+}
+
+.header {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.header h1 {
+  color: var(--light01);
+  font-weight: 400;
+  font-size: 2.5rem;
+  letter-spacing: 16px;
 }
 
-.App-link {
-  color: #61dafb;
+.form {
+  margin-bottom: 28px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form input {
+  width: 100%;
+  padding: 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 0;
+  background: var(--light01);
+}
+.form.dark input {
+  background: var(--dark02);
+}
+.todoList {
+  background: var(--light01);
+  border-radius: 5px;
+}
+.todoList.dark {
+  background: var(--dark02);
+  color: var(--light04);
+}
+.todoList li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid var(--light04);
+}
+.todoList li:hover .deleteBtn {
+  opacity: 1;
+}
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+.filter a {
+  color: var(--light04);
+}
+.filter a.active {
+  color: var(--primary01);
+}
+.filterOptions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.filter .count {
+  flex: 1 1 auto;
+}
+.filter .clear {
+  flex: 1 1 auto;
+  text-align: right;
+}
+.filter .filterOptions {
+  flex: 1 2 auto;
+}
+.deleteBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  cursor: pointer;
+  opacity: 0;
+}
+.line {
+  text-decoration: line-through;
 }
